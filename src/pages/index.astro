@@ -1,15 +1,37 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<script is:inline>
+			// ☝️ This script prevent the FART effect.
+			if (localStorage.getItem("theme") === null) {
+				document.documentElement.setAttribute("data-theme", "lemonade");
+			} else
+				document.documentElement.setAttribute(
+					"data-theme",
+					localStorage.getItem("theme")
+				);
+			// "theme" LocalStorage value is set by the package to remember user preference.
+			// The value is checked and applyed before rendering anything.
+		</script>
+		<script>
+			import { themeChange } from "theme-change";
+			themeChange();
+			// 👆 you could import the CDN directly instead of these two lines
+		</script>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Navbar />
+		<Hero />
+		<ThemeToggle />
 	</body>
 </html>

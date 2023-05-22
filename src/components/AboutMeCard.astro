@@ -1,0 +1,34 @@
+---
+import avatar from "../icons/portret_min.jpeg";
+import { Icon } from "astro-icon";
+---
+
+<div
+    class="card max-w-[20rem] bg-base-100 shadow-xl bg-opacity-50 mx-auto relative z-10"
+>
+    <figure class="px-10 pt-10">
+        <img
+            src={avatar}
+            alt="Sergiu Darius Popa headshot"
+            class="rounded-full max-w-[7rem]"
+        />
+    </figure>
+    <div class="card-body items-center text-center pt-2">
+        <h1 class="text-secondary-content">Sergiu Darius Popa</h1>
+        <h2 class="card-title text-secondary-content">Front End Developer</h2>
+        <p class="text-base-content mb-2">
+            If a dog chews shoes whose shoes does he choose?
+        </p>
+        <div class="card-actions">
+            <a class="btn btn-circle btn-accent p-2">
+                <Icon name="mdi:github" />
+            </a>
+            <a class="btn btn-square btn-accent p-2">
+                <Icon name="mdi:linkedin" />
+            </a>
+            <a class="btn btn-circle btn-accent p-2">
+                <Icon name="ic:baseline-whatsapp" />
+            </a>
+        </div>
+    </div>
+</div>

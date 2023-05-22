@@ -1,0 +1,78 @@
+---
+import Icon from "astro-icon";
+import "@fontsource/indie-flower";
+---
+
+<div class="navbar bg-base-100 flex-wrap py-2 md:px-6 sticky top-0 z-10">
+    <div class="flex-1 md:basis-0 md:mb-0">
+        <a
+            class="btn btn-ghost md:btn-lg normal-case flex items-center gap-2 text-3xl font-IndieFlower md:text-4xl"
+            ><Icon
+                name="fa-brands:js-square "
+                class="w-8 h-8 md:w-10 md:h-10"
+            />
+            <span class="-mb-1">Darius Popa</span></a
+        >
+    </div>
+
+    <button class="btn btn-ghost m md:hidden" id="menuBtn">
+        <Icon name="ic:round-menu" class="h-6 w-6" />
+    </button>
+
+    <div
+        class="w-full md:w-auto opacity-0 transition-opacity duration-500 scale-0 h-0 md:opacity-100 md:scale-100 md:h-auto"
+        id="menu"
+    >
+        <ul
+            class="menu px-1 md:menu-horizontal mt-2 w-full divide-y-2 md:divide-y-0"
+        >
+            <li class="py-1"><a>Projects</a></li>
+            <li class="py-1"><a>Testimonials</a></li>
+            <li class="py-1"><a>Blog</a></li>
+            <li class="py-1"><a>About me</a></li>
+            <li>
+                <button id="subMenuBtn">SubMenu</button>
+                <ul
+                    id="subMenu"
+                    class="rounded-md menu menu-vertical min-w-max"
+                >
+                    <li class="w-full shadow-none">
+                        <a>Lorem Ipsum</a>
+                    </li>
+                    <li class="w-full">
+                        <a>Lorem Ipsum</a>
+                    </li>
+                    <li class="w-full">
+                        <a>Lorem Ipsum</a>
+                    </li>
+                    <li class="w-full">
+                        <a>Lorem Ipsum</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a>Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    import tippy, { Tippy } from "tippy.js";
+
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+    const subMenu = document.getElementById("subMenu");
+    menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("scale-0");
+        menu.classList.toggle("opacity-0");
+        menu.classList.toggle("h-0");
+    });
+
+    const tippyPlacement = screen.availWidth < 768 ? "right" : "bottom";
+
+    const tippyInstance = tippy("#subMenuBtn", {
+        content: subMenu,
+        placement: tippyPlacement,
+        interactive: true,
+        showOnCreate: true,
+    });
+</script>

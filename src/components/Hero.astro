@@ -1,0 +1,53 @@
+---
+import "@fontsource/indie-flower/";
+import "@fontsource/poppins";
+import { Icon } from "astro-icon";
+import AboutMeCard from "./AboutMeCard.astro";
+import BottomDivider from "./BottomDivider.astro";
+
+/* TODO Import astrojs/images for optimizations*/
+---
+
+<div
+    class="hero min-h-screen bg-base-200 bg-gradient-to-br from-primary to-secondary relative pb-20 lg:pb-0"
+>
+    <div
+        class="hero-content flex-col-reverse lg:flex-row-reverse justify-between gap-16 md:gap-24 mt-16 lg:mt-0"
+    >
+        <div class="flex-1 relative">
+            <AboutMeCard />
+            <!--             <Icon
+                name="splashes/splash1219285"
+                class="text-accent absolute lg:-top-10 md:-top-28 -top-12 sm:-top-24 sm:max-w-[20rem] md:max-w-xs fill-primary left-1/2 -translate-x-1/2"
+            /> -->
+        </div>
+
+        <div
+            class="text-center flex-1 relative md:max-w-md lg:max-w-none sm:max-w-sm"
+        >
+            <h2
+                class="text-5xl md:text-7xl font-bold font-IndieFlower text-primary-content relative z-10"
+            >
+                <span class="md:block">Let's Make</span> the web great again
+            </h2>
+            <Icon
+                name="splashes/splash42387"
+                class="text-accent absolute lg:-top-10 md:-top-28 -top-12 sm:-top-24 sm:max-w-[20rem] md:max-w-xs fill-primary -rotate-[45deg] left-1/2 -translate-x-1/2"
+            />
+            <p
+                class="py-6 text-primary-content px-4 md:text-base z-10 relative"
+            >
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                assumenda excepturi exercitationem quasi. In deleniti eaque aut
+                repudiandae et a id nisi.
+            </p>
+            <button class="btn btn-accent z-10 relative">My work</button>
+            <button class="btn btn-primary ml-8 z-10 relative"
+                >Let's talk</button
+            >
+        </div>
+    </div>
+    <div class="text-secondary"><BottomDivider /></div>
+</div>
+
+<script></script>
